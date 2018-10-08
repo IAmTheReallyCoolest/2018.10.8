@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>星星闪烁</title>
+	</head>
+	<body style="background:#000">
+		<div id="stars"></div>
+		<script>
+			var stars=document.getElementById('stars');//获取id为star_box的元素
+			var Obj=function(){}//创建一个对象
+			Obj.prototype.drawStar=function(){
+				//增加对象原型方法drawStar
+				var odiv=document.createElement('div');//创建div
+				odiv.style.width='7px';
+				odiv.style.height='7px';
+				odiv.style.position='relative';//设置div相对定位
+				odiv.style.left=Math.floor(document.body.clientWidth*Math.random())+'px';//div的left值不能超出屏幕高度
+				odiv.style.top=Math.floor(document.body.clientHeight*Math.random())+'px';//div的top值不能超过屏幕的高度
+				odiv.style.overflow='hidden';//设置div的overflow为hidden
+				stars.appendChild(odiv);//添加div到stars_box元素上
+				
+			}
+		</script>
+	</body>
+</html>
